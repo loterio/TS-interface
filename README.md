@@ -1,6 +1,6 @@
 <h2>TS - Interfaces</h2>
 
-<b>- resume</b><br><br>
+<b>- resume</b><br>
 this folder contains examples of how create an interface in TS an how to export/import functions on TS files.
 
 <b>- explanation</b>
