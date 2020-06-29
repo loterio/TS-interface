@@ -1,0 +1,1 @@
+this folder contains examples of how create an interface in TS an how to export/import functions on TS files.
