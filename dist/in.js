@@ -32,6 +32,7 @@ var MGamer = /** @class */ (function (_super) {
     MGamer.prototype.changeDPI = function (max) {
         var lvl;
         var msg;
+        var dif = 400;
         if (max <= 1200) {
             lvl = 3;
         }
@@ -39,29 +40,25 @@ var MGamer = /** @class */ (function (_super) {
             lvl = 6;
         }
         else {
-            lvl = 9;
+            lvl = 10;
+            dif = Math.round(max / lvl);
         }
-        msg = "your mouse has " + max + " of DPI and " + lvl + " regulations for this source.\n\n        * each one with 400dpi of difference *";
+        msg = "your mouse has " + max + " of DPI and " + lvl + " regulations for this source.\n\n        * each one with aproximately " + dif + " DPI of difference *";
         console.log(msg);
     };
     return MGamer;
 }(Mouse));
 exports.MGamer = MGamer;
-var rato = new MGamer;
-rato.brand = "C3TECH";
-rato.model = "MG-11 BSI";
-rato.buttons = 6;
-rato.maxDPI = 2400;
-rato.wireless = false;
-var dpi = rato.maxDPI;
-rato.changeDPI(dpi);
-rato.describePeriferic();
-var mouseGamer = /** @class */ (function (_super) {
-    __extends(mouseGamer, _super);
-    function mouseGamer(colors) {
+var mouseGamerColored = /** @class */ (function (_super) {
+    __extends(mouseGamerColored, _super);
+    function mouseGamerColored(colors) {
         var _this = _super.call(this) || this;
         _this.rgb = colors;
         return _this;
     }
-    return mouseGamer;
-}(Mouse));
+    mouseGamerColored.prototype.descAll = function () {
+        console.log("\n        brand: " + this.brand + "\n\n        model: " + this.model + "\n\n        DPI: " + this.maxDPI + "\n\n        buttons: " + this.buttons + "\n\n        wireless: " + this.wireless + "\n\n        RGB: " + this.rgb + "\n\n        ");
+    };
+    return mouseGamerColored;
+}(MGamer));
+exports.mouseGamerColored = mouseGamerColored;
